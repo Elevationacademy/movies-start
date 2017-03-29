@@ -1,7 +1,7 @@
-app.controller('MoviesCtrl', ['$scope', 'movies', function($scope, movies) {
+app.controller('MoviesCtrl', ['$scope', 'movies', function($scope, moviesModel) {
   $scope.isDeleting = false;
 
-  $scope.movies = movies.getMovies();
+  $scope.moviesModel = movies.getMovies();
 
   $scope.addMovie = function(){
     alert("This functionality will be available soon!");
