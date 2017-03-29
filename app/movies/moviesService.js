@@ -1,4 +1,6 @@
-app.factory('movies', [function() {
+app.factory('moviesModel', [function() {
+  //as we're not using a database this service will act as a "fake" DB 
+  //normally the movies would be in a DB and not stored below!
   var movies = [{
     id: 0,
     name: "inglorious basterds",
