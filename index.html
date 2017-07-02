@@ -3,13 +3,13 @@
 <html lang="en" ng-app="movieLibrary">
 
 <head>
+    <title>Movies App</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/">
-    <title>Movies App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href='css/app.css' rel="stylesheet">
 </head>
 
@@ -19,8 +19,8 @@
             <div class="movies-header-toolbar">
                 <div class="movies-edit-panel">
                     <button type="button" class="btn glyphicon glyphicon-plus" ng-click="addMovie()"></button>
-                    <button ng-show="!isDeleting" type="button" class="btn glyphicon glyphicon-trash" ng-click="deleteMovies()"></button>
-                    <button ng-hide="!isDeleting" type="button" class="btn done-button" ng-click="doneDeleteMovies()">Done</button>
+                    <button ng-show="!isDeleting" type="button" class="btn glyphicon glyphicon-trash" ng-click="toggleDeleteMode()"></button>
+                    <button ng-hide="!isDeleting" type="button" class="btn done-button" ng-click="toggleDeleteMode()">Done</button>
                 </div>
             </div>
             <div class="movies-container">
@@ -34,7 +34,7 @@
                         <div class="movie-sub-info">
                             <div class="movie-year">{{movie.year}}</div>
                             <div class="movie-resolutions">
-                                <span ng-repeat="res in movie.supportedResolution track by $index">{{res}}p</span>
+                                <span ng-repeat="res in movie.supportedResolution track by $index">{{res}}p </span>
                             </div>
                         </div>
                     </div>
